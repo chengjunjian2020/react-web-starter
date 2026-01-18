@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 5086490 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1767152430706') format('woff2'),
+       url('iconfont.woff?t=1767152430706') format('woff'),
+       url('iconfont.ttf?t=1767152430706') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.venoaro-siweidaotu:before {
+  content: "\e634";
+}
+
+.venoaro-yanjianggao:before {
+  content: "\e653";
+}
+
+.venoaro-wenbenzhaiyao:before {
+  content: "\e6ec";
+}
+
+.venoaro-dagang:before {
+  content: "\e631";
+}
+
+.venoaro-fanyi_translation:before {
+  content: "\e66a";
+}
+
+.venoaro-google:before {
+  content: "\ea0c";
+}
+

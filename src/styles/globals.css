@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: oklch(58% 0.212 273deg);
+    --primary-foreground: #fff;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 60% 20% 10%;
+    --radius: 0.5rem;
+
+    /* button var */
+    --color-primary: oklch(58% 0.212 273deg);
+    --color-primary-foreground: #fff;
+    --color-primary-hover: oklch(52% 0.23 272.2deg);
+
+    /* 基础样式 */
+    --color-blue-600: oklch(52% 0.23 272.2deg);
+  }
+}
+
+@layer components {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .text-primary-foreground {
+    color: var(--color-primary-foreground);
+  }
+
+  .bg-primary-hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

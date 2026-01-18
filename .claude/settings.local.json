@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv:*)",
+      "WebFetch(domain:www.shadcn.com.cn)",
+      "Bash(pnpm add:*)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:developers.google.com)",
+      "Bash(npm install:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm orval:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm dev)"
+    ]
+  }
+}
