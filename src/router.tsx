@@ -1,46 +1,12 @@
 import { createBrowserRouter, Navigate, RouteObject } from 'react-router-dom'
 import ErrorPage from './components/error-page'
 import { getDefaultLayout } from './components/layout'
-import WorkSpaces from './pages/workspaces'
-import Login from './pages/login'
-import Editor from './pages/editor'
-import { ToolMenuType } from './pages/editor/constants'
-import VideoPage from './pages/editor/features/resource'
-import Subtitles from './pages/editor/features/subtitles'
-import ContentCreation from './pages/editor/features/contentCreation'
+import Home from './pages/home'
 
 export const routerObjects: RouteObject[] = [
-  // {
-  //   path: '/',
-  //   Component: HomePage,
-  // },
   {
-    path: '/login',
-    Component: Login,
-  },
-  {
-    path: '/workspaces',
-    Component: WorkSpaces
-  },
-  {
-    path: '/editor/:id',
-    Component: Editor,
-    children:[
-      { index: true, element: <Navigate to={ToolMenuType.Resource} replace /> },
-      {
-        path: "resource",
-        Component: VideoPage,
-      },
-      {
-        path: "subtitles",
-        Component: Subtitles,
-      },
-      {
-        path: "content-creation",
-        Component: ContentCreation,
-      },
-      { path: "*", element: <Navigate to={ToolMenuType.Resource} replace /> }
-    ]
+    path: '/',
+    Component: Home,
   },
 ]
 
