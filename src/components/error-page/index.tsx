@@ -1,10 +1,8 @@
-import { useTranslation } from 'react-i18next'
 import { Link, useRouteError } from 'react-router-dom'
 import { Button } from '../ui/button'
 
 export default function ErrorPage() {
   const error = useRouteError() as any
-  const { t } = useTranslation('notfound')
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-4 text-left">
@@ -15,7 +13,7 @@ export default function ErrorPage() {
         <i>{error?.statusText || error?.message}</i>
       </p>
       <Button asChild>
-        <Link to="/">{t('backtohomepage')}</Link>
+        <Link to="/">{1111}</Link>
       </Button>
     </div>
   )
