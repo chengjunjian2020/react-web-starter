@@ -6,14 +6,14 @@ export default function ErrorPage() {
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-4 text-left">
-      <h1>{t('oops')}</h1>
-      <p>{t('title')}</p>
+      <h1>抱歉 页面出现了问题</h1>
+      <p>请稍后再试</p>
       <p className="font-mono">
         <span className="mr-2">{error?.status}</span>
         <i>{error?.statusText || error?.message}</i>
       </p>
       <Button asChild>
-        <Link to="/">{1111}</Link>
+        <Link to="/">返回首页</Link>
       </Button>
     </div>
   )

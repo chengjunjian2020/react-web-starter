@@ -1,6 +1,18 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import type { LoginResponseDto, UserInfoDto } from '../api/models'
+
+// 简化的用户类型定义（项目暂未接后端，可先用占位类型）
+export interface UserInfoDto {
+  id?: string | number
+  name?: string
+  [key: string]: any
+}
+
+export interface LoginResponseDto {
+  user: UserInfoDto | null
+  accessToken: string
+  refreshToken: string
+}
 
 export interface AuthState {
   // 状态
