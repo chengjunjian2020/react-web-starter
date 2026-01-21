@@ -3,6 +3,7 @@ import ErrorPage from './components/error-page'
 import { getDefaultLayout } from './components/layout'
 import Home from './pages/home'
 import DoctorDetail from './pages/doctor-detail'
+import Test from './pages/test'
 
 export const routerObjects: RouteObject[] = [
   {
@@ -12,6 +13,10 @@ export const routerObjects: RouteObject[] = [
   {
     path: '/doctor/:id',
     Component: DoctorDetail,
+  },
+  {
+    path: '/test',
+    Component: Test,
   },
 ]
 
