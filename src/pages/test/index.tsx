@@ -1,4 +1,4 @@
-import { fetchAllDoctors } from "@/lib/web3/medcred.read";
+import { fetchAllDoctors, fetchDoctorById } from "@/lib/web3/medcred.read";
 import { useEffect } from "react";
 
 const Test = () => {
@@ -7,11 +7,7 @@ const Test = () => {
 
         async function loadDoctors() {
             try {
-                const list = await fetchAllDoctors({
-                    startId: 1,        // 如果你发现第一个医生取不到，改成 0
-                    onlyActive: true,  // 只要启用的医生
-                    concurrency: 6,    // RPC 并发数，Infura 建议 5~8
-                });
+                const list = await fetchDoctorById(1);
                 console.log(list)
 
                 // if (alive) {

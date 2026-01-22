@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import doctors from 'src/data/doctors.json'
 import reviews from 'src/data/reviews.json'
@@ -12,6 +12,7 @@ import {
 } from 'src/components/ui/dialog'
 import { Button } from 'src/components/ui/button'
 import { Star } from 'lucide-react'
+import { fetchDoctorById } from '../../lib/web3/medcred.read'
 
 type Doctor = {
   id: number
@@ -46,11 +47,24 @@ const DoctorDetail = () => {
   const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
   const [reviewText, setReviewText] = useState('')
+  const [loading, setLoading] = useState(false);
 
   const doctor = useMemo(() => {
     const list = doctors as Doctor[]
     return list.find((d) => d.id === id)
   }, [id])
+
+  useEffect(()=>{
+    if(!id){
+      return;
+    }
+    setLoading(true)
+    fetchDoctorById(1).then((res=>{
+      console.log(res);
+    })).finally(()=>{
+      setLoading(false)
+    })
+  },[id])
 
   const doctorReviews = useMemo(() => {
     const list = reviews as Review[]
@@ -182,10 +196,6 @@ const DoctorDetail = () => {
                     </div>
                   </div>
                 )}
-
-                <div className='text-xs text-slate-400'>
-                  * 评分数据为示例数据，仅用于界面展示
-                </div>
               </div>
             </div>
           </div>
